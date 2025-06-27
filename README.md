@@ -1,179 +1,218 @@
+# 🚀 Visionrd - Label Editor
 
-# Visionrd - Label Editor
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue?logo=python)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-  - [Loading Labels](#1-loading-labels)
-  - [Selecting Output Folder](#2-selecting-output-folder)
-  - [Label Editing](#3-label-editing)
-  - [Image Controls](#4-image-controls)
-  - [Search & Replace](#5-search--replace)
-  - [Undo](#6-undo)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
-- [Application Structure](#application-structure)
-- [Error Handling](#error-handling)
-- [Customization](#customization)
-- [Saving Labels](#saving-labels)
-- [Technologies Used](#technologies-used)
-- [Acknowledgements](#acknowledgements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support](#support)
+---
 
-## Overview
+### 📥 [Click to Download the Latest Version](https://github.com/visionrd-ai/Visionrd---Label---Editor/archive/refs/heads/main.zip)
 
-**Visionrd - Label Editor** is a user-friendly, graphical label editing tool designed to simplify image labeling tasks. It allows you to load a set of images, apply or modify labels, and save your work efficiently. This tool is built using PySide6, OpenCV, and PIL for image processing and provides a variety of features to enhance the labeling process.
+[![Download](https://img.shields.io/badge/Download-ZIP-blue?style=for-the-badge&logo=github)](https://github.com/visionrd-ai/Visionrd---Label---Editor/archive/refs/heads/main.zip)
 
-## Features
+---
 
-- Load and display images for labeling
-- Edit, update, and manage image labels
-- Zoom in/out functionality for images
-- Grayscale image viewing
-- Search and replace functionality for labels
-- Background color customization using a color picker
-- Keyboard shortcuts for efficient navigation
-- Auto-saving at regular intervals
-- Undo recent changes
+## 📌 Table of Contents
 
-## Prerequisites
+- [🔍 Overview](#-overview)
+- [✨ Features](#-features)
+- [⚙️ Prerequisites](#️-prerequisites)
+- [📦 Installation](#-installation)
+- [🚀 Getting Started](#-getting-started)
+- [🧠 Usage](#-usage)
+  - [📁 Loading Labels](#1-loading-labels)
+  - [📂 Selecting Output Folder](#2-selecting-output-folder)
+  - [✍️ Label Editing](#3-label-editing)
+  - [🖼️ Image Controls](#4-image-controls)
+  - [🔍 Search & Replace](#5-search--replace)
+  - [↩️ Undo](#6-undo)
+- [⌨️ Keyboard Shortcuts](#-keyboard-shortcuts)
+- [📁 Application Structure](#-application-structure)
+- [🚨 Error Handling](#-error-handling)
+- [🎨 Customization](#-customization)
+- [💾 Saving Labels](#-saving-labels)
+- [🧰 Technologies Used](#-technologies-used)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [💬 Support](#-support)
 
-Ensure you have the following installed:
-- **Python**: Version 3.7 or later
-- Python packages:
-  - `PySide6`
-  - `OpenCV` (`cv2`)
-  - `Pillow` (`PIL`)
-  - `NumPy`
+---
 
-## Installation
+## 🔍 Overview
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/visionrd-ai/Visionrd---Label---Editor.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd visionrd-label-editor
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(Create a `requirements.txt` file if you don't have one with the following content)*
-   ```
-   PySide6
-   opencv-python
-   pillow
-   numpy
-   ```
+**Visionrd - Label Editor** is an intuitive and powerful GUI-based image label editor designed to streamline the process of visual data annotation. Built with PySide6, OpenCV, and PIL, it provides an efficient and user-friendly experience for annotating datasets with ease.
 
-## Getting Started
+---
 
-To start the application, run the following command:
+## ✨ Features
+
+✅ Load and display images for labeling  
+✅ Edit, update, and manage image labels  
+✅ Zoom & grayscale view support  
+✅ Live search and replace  
+✅ Color picker for background customization  
+✅ Auto-saving and undo support  
+✅ Keyboard shortcuts for faster workflow
+
+---
+
+## ⚙️ Prerequisites
+
+Ensure the following are installed:
+
+- **Python**: `>=3.7`
+- Required Python packages:
+  ```bash
+  pip install PySide6 opencv-python pillow numpy
+  ```
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/visionrd-ai/Visionrd---Label---Editor.git
+cd visionrd-label-editor
+pip install -r requirements.txt
+```
+
+> If `requirements.txt` doesn't exist, create it with:
+> ```txt
+> PySide6
+> opencv-python
+> pillow
+> numpy
+> ```
+
+---
+
+## 🚀 Getting Started
+
+To launch the app, simply run:
+
 ```bash
 python label_editor.py
 ```
-Replace `label_editor.py` with your actual script's filename if different.
 
-## Usage
+Replace `label_editor.py` with your actual script name if different.
 
-### 1. Loading Labels
-- Click on **"Load Labels"** and select a label file (e.g., `labels.txt`).
-- The file should have each line formatted as: `image_path	label`.
+---
 
-### 2. Selecting Output Folder
-- Click **"Select Output Folder"** and choose the folder where you want to save the edited labels.
+## 🧠 Usage
 
-### 3. Label Editing
-- Enter or modify the label in the input field.
-- Click **"Save"** or press `Enter` to save the label and proceed to the next image.
+### 1. 📁 Loading Labels
+Click **Load Labels** to select a `.txt` file (format: `image_path<TAB>label`).
 
-### 4. Image Controls
-- Use **Next** and **Back** buttons to navigate through images or use arrow keys.
-- Adjust zoom using the `+` or `-` buttons, or `Up`/`Down` arrow keys.
-- Toggle grayscale mode using the **Grayscale** button.
-- Change the background color using the **Pick Color** button.
+### 2. 📂 Selecting Output Folder
+Choose the output directory for storing updated annotations.
 
-### 5. Search & Replace
-- Click **"Search & Replace"** to open the dialog.
-- Enter the search term and the replacement term to update all matching labels.
+### 3. ✍️ Label Editing
+Modify labels using the input field and press **Enter** or **Save**.
 
-### 6. Undo
-- Click **"Undo"** or press `Backspace` to revert recent changes.
+### 4. 🖼️ Image Controls
+- Navigate: `←`/`→` or **Back**/**Next**
+- Zoom: `↑`/`↓` or `+`/`-`
+- Grayscale toggle & color picker available
 
-## Keyboard Shortcuts
+### 5. 🔍 Search & Replace
+Open the dialog, input terms, and apply across all labels.
 
-| Shortcut        | Action                               |
-|-----------------|--------------------------------------|
-| `Right Arrow`   | Save and move to next image          |
-| `Left Arrow`    | Move back to the previous image      |
-| `Up Arrow`      | Zoom in                              |
-| `Down Arrow`    | Zoom out                             |
-| `Delete`        | Delete the current label             |
-| `Backspace`     | Undo the last change                 |
-| `Enter/Return`  | Save the label and move to the next image |
+### 6. ↩️ Undo
+Press **Backspace** or click **Undo** to revert the last change.
 
-## Application Structure
+---
 
-The main files and folders in the project:
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut     | Action                        |
+|--------------|-------------------------------|
+| `→` Arrow     | Save and go to next image      |
+| `←` Arrow     | Go back to previous image      |
+| `↑` Arrow     | Zoom in                        |
+| `↓` Arrow     | Zoom out                       |
+| `Backspace`   | Undo last change               |
+| `Delete`      | Delete current label           |
+| `Enter`       | Save label and go to next image |
+
+---
+
+## 📁 Application Structure
+
 ```
 visionrd-label-editor/
-│
-├── label_editor.py        # Main application script
-├── visionrd_logo.png      # Application icon (optional)
-├── README.md              # Project documentation
-└── requirements.txt       # Python package requirements
+├── label_editor.py          # Main app file
+├── visionrd_logo.png        # App icon (optional)
+├── requirements.txt         # Dependencies
+└── README.md                # You're here!
 ```
 
-## Error Handling
+---
 
-- An error message is displayed if an image fails to load.
-- Warning messages appear if invalid actions are attempted (e.g., entering an out-of-range index).
+## 🚨 Error Handling
 
-## Customization
+- ❌ Image load errors are displayed clearly
+- ⚠️ Invalid actions produce warnings
+- ⛔ Graceful fallback for missing inputs
 
-You can modify certain aspects of the application:
-- Adjust `auto_save_interval` (default is 5000 ms) to change the auto-save frequency.
-- Change `zoom_factor` to modify the zooming behavior.
-- Customize the background color using the color picker feature.
+---
 
-## Saving Labels
+## 🎨 Customization
 
-- Labels are saved to a file named `annotations_fix.txt` in the output folder you selected.
-- Ensure you’ve loaded a label file and chosen an output folder before starting your editing.
+- Modify `auto_save_interval` (ms)
+- Adjust `zoom_factor`
+- Use color picker to change background
+- Extend features in `label_editor.py`
 
-## Technologies Used
+---
 
-- **PySide6**: For creating the GUI application
-- **OpenCV**: For image loading and processing
-- **Pillow (PIL)**: For image conversion
-- **NumPy**: For efficient data handling
+## 💾 Saving Labels
 
-## Acknowledgements
+- Output file: `annotations_fix.txt`
+- Make sure label file and output directory are selected
 
-- **PySide6**: Providing the Python bindings for the Qt toolkit
-- **OpenCV**: Enabling advanced image processing capabilities
-- **Pillow (PIL)**: Offering image manipulation functionalities
+---
 
-## Contributing
+## 🧰 Technologies Used
 
-Contributions are welcome! If you have suggestions or improvements, please follow these steps:
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m 'Add new feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
+| Technology | Purpose                     |
+|------------|-----------------------------|
+| PySide6    | GUI framework (Qt for Python) |
+| OpenCV     | Image loading & manipulation |
+| Pillow     | Image conversion              |
+| NumPy      | Data handling                 |
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🙏 Acknowledgements
 
-## Support
+Big thanks to these open-source projects:
 
-If you encounter any issues or have any questions, please open an issue on the GitHub repository or contact the project maintainer.
+- [PySide6](https://doc.qt.io/qtforpython/)
+- [OpenCV](https://opencv.org/)
+- [Pillow](https://python-pillow.org/)
+- [NumPy](https://numpy.org/)
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repo  
+2. Create a branch: `git checkout -b my-feature`  
+3. Commit: `git commit -m "Add: feature"`  
+4. Push: `git push origin my-feature`  
+5. Submit a PR
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for details.
+
+---
+
+## 💬 Support
+
+- Found a bug? ➡️ [Open an issue](https://github.com/visionrd-ai/Visionrd---Label---Editor/issues)
+- Need help fast? Reach out to the maintainer directly.
